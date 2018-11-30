@@ -1,5 +1,7 @@
 import { Component } from '@angular/core';
 import { TareasService } from '../../app/services/tareas.service';
+import { Lista } from '../../models/lista.model';
+
 
 
 
@@ -12,6 +14,10 @@ export class PendientesPage {
 
     constructor( public tareasService: TareasService){
 
+    }
+    listaSeleccionada(lista:Lista){ 
+        console.log( lista );
+        
     }
 
 }

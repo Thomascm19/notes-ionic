@@ -4,8 +4,13 @@
     </ion-navbar>
   </ion-header>
   
-  <ion-content padding>
-    <h2>Hola pendientes</h2>
+  <ion-content>
+    
+    <ion-list>
+      <button ion-item *ngFor="let lista of tareasService.listas" (click)="listaSeleccionada(lista)">
+        {{ lista.titulo }}
+      </button>  
+    </ion-list>
     
   </ion-content>
   
