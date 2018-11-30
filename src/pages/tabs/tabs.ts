@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 
-import { AboutPage } from '../about/about';
 import { PendientesPage } from '../pendientes/pendientes.component';
 import { TerminadosPage } from '../terminados/terminados.component';
 

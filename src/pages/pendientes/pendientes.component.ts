@@ -1,4 +1,6 @@
 import { Component } from '@angular/core';
+import { TareasService } from '../../app/services/tareas.service';
+
 
 
 @Component({
@@ -7,5 +9,9 @@ import { Component } from '@angular/core';
     
 })
 export class PendientesPage {
+
+    constructor( public tareasService: TareasService){
+
+    }
 
 }
