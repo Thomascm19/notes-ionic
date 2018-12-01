@@ -23,6 +23,8 @@ export class AgregarPage {
             const titulo = this.navParams.get('titulo');
 
             this.lista = new Lista(titulo);
+
+            this.tareasService.agregarLista(this.lista);
     }
 
     agregarItem(){
