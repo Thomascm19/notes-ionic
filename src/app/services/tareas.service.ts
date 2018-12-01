@@ -18,6 +18,14 @@ export class TareasService{
             this.lista.push(lista);
             this.guardarStorage();
         }
+        borrarLista(lista:Lista){
+
+            this.lista = this.lista.filter(listaData =>{
+                return listaData.id !== lista.id
+            });
+
+            this.guardarStorage();
+        }
 
         guardarStorage(){
             localStorage.setItem('data',JSON.stringify(this.lista));

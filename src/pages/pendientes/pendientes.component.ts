@@ -28,6 +28,14 @@ export class PendientesPage {
         });
         
     }
+
+    borrarLista(lista: Lista){
+
+        this.tareasService.borrarLista(lista);
+
+    }
+
+
     agregarLista(){
 
       const alerta = this.alertaCtrl.create({
