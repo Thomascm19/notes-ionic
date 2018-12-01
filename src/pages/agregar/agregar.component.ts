@@ -44,6 +44,9 @@ export class AgregarPage {
 
         this.lista.items.push(nuevoItem);
 
+        //Se llama el metodo para guardar los items en el localStorage
+        this.tareasService.guardarStorage();
+
         this.nombreItem = "";
     }
     actualizarTarea(item: ListaItem){
