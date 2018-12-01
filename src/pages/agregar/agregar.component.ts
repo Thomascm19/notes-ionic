@@ -22,9 +22,17 @@ export class AgregarPage {
                     
             const titulo = this.navParams.get('titulo');
 
-            this.lista = new Lista(titulo);
+            if(this.navParams.get('lista')){
 
-            this.tareasService.agregarLista(this.lista);
+                this.lista = this.navParams.get('lista');
+            }else{
+
+                this.lista = new Lista(titulo);
+
+                this.tareasService.agregarLista(this.lista);
+            }
+
+            
     }
 
     agregarItem(){

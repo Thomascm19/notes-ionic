@@ -21,7 +21,11 @@ export class PendientesPage {
 
     }
     listaSeleccionada(lista:Lista){ 
-        console.log( lista );
+        
+        this.navCtrl.push(AgregarPage,{
+            titulo: lista.titulo,
+            lista: lista
+        });
         
     }
     agregarLista(){
