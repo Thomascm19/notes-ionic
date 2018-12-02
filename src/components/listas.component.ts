@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TareasService } from '../app/services/tareas.service';
 import { Lista } from '../models/lista.model';
-import { NavController } from 'ionic-angular';
+import { NavController, AlertController } from 'ionic-angular';
 import { AgregarPage } from '../pages/agregar/agregar.component';
 
 @Component({
@@ -15,7 +15,8 @@ export class ListasComponent {
 
     
     constructor( public tareasService: TareasService,
-                private navCtrl: NavController){
+                private navCtrl: NavController,
+                private alertCtrl: AlertController){
 
     }
     listaSeleccionada(lista:Lista){ 
@@ -32,5 +33,31 @@ export class ListasComponent {
         this.tareasService.borrarLista(lista);
 
     }
+    editarLista(lista:Lista){
+
+        const alerta = this.alertCtrl.create({
+            title: 'Editar Nombre',
+            message: 'Editar nombre de la lista',
+            inputs:[{
+                name:'titulo',
+                placeholder: 'Nombre de la lista',
+                value: lista.titulo
+            }],
+            buttons: [{
+                text: 'Cancelar'
+            },{
+                text: 'Guardar',
+                handler: data =>{
+                    if(data.titulo.length === 0){
+                        return;
+                    }
+                   lista.titulo = data.titulo;
+                   this.tareasService.guardarStorage();
+
+                }
+            }]
+        });
+        alerta.present();
+      }
 
 }

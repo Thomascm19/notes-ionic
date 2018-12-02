@@ -1,6 +1,5 @@
 import { Component } from '@angular/core';
 import { TareasService } from '../../app/services/tareas.service';
-import { Lista } from '../../models/lista.model';
 import { NavController, AlertController } from 'ionic-angular';
 import { AgregarPage } from '../agregar/agregar.component';
 
