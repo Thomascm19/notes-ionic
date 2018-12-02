@@ -1,7 +1,7 @@
 import { Component, Input } from '@angular/core';
 import { TareasService } from '../app/services/tareas.service';
 import { Lista } from '../models/lista.model';
-import { NavController, AlertController } from 'ionic-angular';
+import { NavController, AlertController, ItemSliding } from 'ionic-angular';
 import { AgregarPage } from '../pages/agregar/agregar.component';
 
 @Component({
@@ -33,7 +33,9 @@ export class ListasComponent {
         this.tareasService.borrarLista(lista);
 
     }
-    editarLista(lista:Lista){
+    editarLista(lista:Lista, slidingItem:ItemSliding){
+
+        slidingItem.close();
 
         const alerta = this.alertCtrl.create({
             title: 'Editar Nombre',
