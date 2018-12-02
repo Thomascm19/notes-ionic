@@ -8,6 +8,7 @@ import { TabsPage } from '../pages/tabs/tabs';
 import { PendientesPage } from '../pages/pendientes/pendientes.component';
 import { TerminadosPage } from '../pages/terminados/terminados.component';
 import { AgregarPage } from '../pages/agregar/agregar.component';
+import { ListasComponent } from '../components/listas.component';
 
 
 //services
@@ -17,13 +18,19 @@ import { TareasService } from '../app/services/tareas.service';
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
 
+//Pipes
+import { FiltroCompletadoPipe } from '../pipes/filtro-completado/filtro-completado';
+
+
 @NgModule({
   declarations: [
     MyApp,
     TabsPage,
     PendientesPage,
     TerminadosPage,
-    AgregarPage
+    AgregarPage,
+    FiltroCompletadoPipe,
+    ListasComponent
   ],
   imports: [
     BrowserModule,
